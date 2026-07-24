@@ -7,7 +7,7 @@
     "lint": "eslint packages --ext .ts && cargo clippy --workspace -- -D warnings",
     "lint:fix": "eslint packages --ext .ts --fix && cargo clippy --fix --allow-dirty --workspace -- -D warnings",
     "test": "cargo test --workspace && pnpm --filter './packages/*' --if-present test",
-    "build": "pnpm --filter './packages/*' --if-present build && cargo build --workspace"
+    "build": "node api.js && pnpm --filter './packages/*' --if-present build && cargo build --workspace"
   },
   "devDependencies": {
     "@types/node": "^26.0.0",
